@@ -4,21 +4,31 @@
                 <div class="footer-content">
                     <div class="footer-section">
                         <h3>Contato</h3>
-                        <p>Endereço: Rua dos restaurantes, 123</p>
-                        <p>Telefone: (11) 1234-5678</p>
-                        <p>Email: contato@restaurantedoze.com</p>
+                        <p>Endereço: {{ endereco || 'Seu endereço, 123' }}</p>
+                        <p>Telefone: {{ telefone ||  '(11) 1234-5678'}}</p>
+                        <p>Email: {{email || 'contato@suaempresa.com'}}</p>
                     </div>
                     <div class="footer-section">
                         <h3>Horário de Funcionamento</h3>
-                        <p>Segunda a Sábado: 17h - 23h</p>
+                        <p>{{ horario || 'Seu horario de funcionamento' }}</p>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    &copy; 2023 Restaurante do Zé. Feito por <a href="https://www.instagram.com/plenitude_x/">Plenitudex</a>.
+                    &copy; 2023 {{ titulo ||'Nome da empresa'}}. Feito por <a href="https://www.instagram.com/plenitude_x/">Plenitudex</a>.
                 </div>
             </div>
         </footer>
 </template>
+
+<script setup>
+import dados from '../../var.json'
+
+const titulo = dados.title
+const telefone = dados.Contato.telefone
+const email = dados.Contato.email
+const endereco = dados.Contato.endereco
+const horario = dados.Horario
+</script>
 
 <style>
 .footer {

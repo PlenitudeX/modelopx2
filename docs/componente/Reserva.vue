@@ -6,7 +6,7 @@
                 <img src="http://www.anothermonkeythai.com/wp-content/uploads/2015/06/rest3.jpg">
             </div>
             <div class="product-title">
-                <p><strong>Restaurante do Zé</strong></p>
+                <p><strong>{{ titulo || 'Nome da empresa'}}</strong></p>
             </div>
             <div class="product-text">
                 <p>Mesa para</p>
@@ -29,6 +29,11 @@
     </div>
 </template>
 
+<script setup>
+import dados from '../../var.json'
+
+const titulo = dados.title
+</script>
 
 <style>
 #reserva h1 {

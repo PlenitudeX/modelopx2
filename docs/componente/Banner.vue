@@ -1,11 +1,20 @@
 <template>
     <div class="banner">
         <div class="fundo">
-            <h1>Título do Banner</h1>
-            <p>Breve descrição do banner que pode ou não existir</p>
+            <h1>{{ titulo || "Titulo do banner"}}</h1>
+            <p>{{ descricao || "Breve descrição do banner" }}</p>
+            <button>{{ button || "Botão" }}</button>
         </div>
     </div>
 </template>
+
+<script setup>
+import dados from '../../var.json'
+
+const titulo = dados.Banner.Title
+const descricao = dados.Banner.Description
+const button = dados.Banner.Button
+</script>
 
 <style>
 .banner {
@@ -34,6 +43,24 @@
     top: 17rem;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.banner button {
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 24px;
+    position: absolute;
+    top: 25rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner button:hover {
+    background-color: #555;
+    transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {

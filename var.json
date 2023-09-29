@@ -1,0 +1,17 @@
+{
+    "title": "Restaurante do Zé",
+    "TitleLink1": "Cardápio",
+    "TitleLink2": "Reserva",
+    "TitleLink3": "Contato",
+    "Banner": {
+        "Title": "Restaurante do Zé",
+        "Description": "Venha conferir o melhor restaurante da cidade!",
+        "Button": "Ver localização"
+    },
+    "Contato": {
+        "telefone": "(11) 99999-9999",
+        "endereco": "Rua dos restaurantes, 0 - São Paulo/SP",
+        "email": "contato@restaurantedoze.com"
+    },
+    "Horario": "Segunda a Sábado: 17h - 23h"
+}

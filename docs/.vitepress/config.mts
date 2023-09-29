@@ -1,15 +1,15 @@
 import { defineConfig } from 'vitepress'
+import dados from '../../var.json'
 
-const titulo = "Restaurante do Zé"
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: titulo || 'Modelo 2',
+  title: dados.title || 'Nome da empresa',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Cardápio', link: '#cardapio' },
-      { text: 'Reserva', link: '#reserva' },
-      { text: 'Contato', link: '#Footer' }
+      { text: dados.TitleLink1 || 'link1', link: '#cardapio' },
+      { text: dados.TitleLink2 || 'link2', link: '#reserva' },
+      { text: dados.TitleLink3 || 'link3', link: '#Footer' }
     ],
   }
 })
