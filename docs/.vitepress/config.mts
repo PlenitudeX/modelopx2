@@ -11,5 +11,5 @@ export default defineConfig({
       { text: dados.TitleLink2 || 'link2', link: '#reserva' },
       { text: dados.TitleLink3 || 'link3', link: '#Footer' }
     ],
-  }
+  },
 })

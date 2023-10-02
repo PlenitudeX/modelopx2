@@ -77,5 +77,10 @@ const button = dados.Banner.Button
         font-size: 16px;
         top: 10rem;
     }
+
+    .banner button {
+        font-size: 16px;
+        top: 15rem;
+    }
 }
 </style>
