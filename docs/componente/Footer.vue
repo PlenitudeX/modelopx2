@@ -1,39 +1,47 @@
 <template>
-    <footer id="Footer" class="footer">
+    <footer :style="{background, color}" id="Footer" class="footer">
             <div>
                 <div class="footer-content">
                     <div class="footer-section">
                         <h3>Contato</h3>
-                        <p>Endereço: {{ endereco || 'Seu endereço, 123' }}</p>
-                        <p>Telefone: {{ telefone ||  '(11) 1234-5678'}}</p>
-                        <p>Email: {{email || 'contato@suaempresa.com'}}</p>
+                        <p>Endereço: Seu endereço, 123</p>
+                        <p>Telefone: (11) 1234-5678</p>
+                        <p>Email:contato@suaempresa.com</p>
                     </div>
                     <div class="footer-section">
                         <h3>Horário de Funcionamento</h3>
-                        <p>{{ horario || 'Seu horario de funcionamento' }}</p>
+                        <p>Seu horario de funcionamento</p>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    &copy; 2023 {{ titulo ||'Nome da empresa'}}. Feito por <a href="https://www.instagram.com/plenitude_x/">Plenitudex</a>.
+                    &copy; 2023 Nome da empresa. Feito por <a :style="{color}" href="https://www.instagram.com/plenitude_x/">Plenitudex</a>.
                 </div>
             </div>
         </footer>
 </template>
 
-<script setup>
-import dados from '../../var.json'
+<script setup lang="ts">
+// import dados from '../../var.json'
+// const titulo = dados.title
+// const telefone = dados.Contato.telefone
+// const email = dados.Contato.email
+// const endereco = dados.Contato.endereco
+// const horario = dados.Horario
 
-const titulo = dados.title
-const telefone = dados.Contato.telefone
-const email = dados.Contato.email
-const endereco = dados.Contato.endereco
-const horario = dados.Horario
+import Tema from '../tema.json'
+
+const props = defineProps<{
+    tema: string
+}>()
+
+const style = props.tema
+
+const background = Tema[style].$schema.Footer
+const color = Tema[style].$schema.White
 </script>
 
 <style>
 .footer {
-    background-color: #333;
-    color: #fff;
     padding: 20px 0 0;
     text-align: center;
 }
@@ -59,16 +67,7 @@ const horario = dados.Horario
 }
 
 .footer-bottom {
-    background-color: #222;
     padding: 10px 0;
-}
-
-.footer-bottom a {
-    color: #fff;
-}
-
-.footer-bottom a:hover {
-    color: #aaa;
 }
 
 @media screen and (max-width: 700px) {

@@ -1,16 +1,16 @@
 <template>
-    <div id="cardapio">
-        <h1>Cardápio</h1>
+    <div :style="{background:body}" id="cardapio">
+        <h1 :style="{color:title}">Cardápio</h1>
         <div class="container">
-            <div class="cards" v-for="cardapio in cardapios" :key="cardapio.id">
+            <div :style="{background: card}" class="cards" v-for="cardapio in cardapios" :key="cardapio.id">
                 <div class="card">
                     <div class="text">
-                        <h2>Nome</h2>
-                        <p>{{ cardapio.titulo }}</p>
+                        <h2 :style="{color:title}">Nome</h2>
+                        <p :style="{color}">{{ cardapio.titulo }}</p>
                     </div>
                     <div class="text">
-                        <h2>Preço</h2>
-                        <p>R$ {{ cardapio.preço }}</p>
+                        <h2 :style="{color:title}">Preço</h2>
+                        <p :style="{color}">R$ {{ cardapio.preço }}</p>
                     </div>
                 </div>
                 <img :src="cardapio.imagem" alt="Imagem 1">
@@ -19,8 +19,9 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
+import Tema from '../tema.json'
 
 const cardapios = ref([
     {
@@ -54,11 +55,22 @@ const cardapios = ref([
         imagem: 'https://picsum.photos/1500/1000',
     },
 ])
+
+const props = defineProps<{
+    tema: string
+}>()
+
+const style = props.tema
+
+const title = Tema[style].$schema.Primary
+const color = Tema[style].$schema.Text
+const body = Tema[style].$schema.Body
+const card = Tema[style].$schema.White
+
 </script>
 
 <style>
 #cardapio {
-    background-color: #f1f1f1;
     text-align: center;
     padding: 2rem;
 }
@@ -75,7 +87,6 @@ const cardapios = ref([
 }
 
 #cardapio .cards {
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 1rem;

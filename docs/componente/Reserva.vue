@@ -1,38 +1,50 @@
 <template>
     <div id="reserva" class="wrapper">
-        <h1>Faça sua Reserva</h1>
+        <h1 :style="{color:title}">Faça sua Reserva</h1>
         <div class="inner">
             <div class="product-picture">
                 <img src="http://www.anothermonkeythai.com/wp-content/uploads/2015/06/rest3.jpg">
             </div>
             <div class="product-title">
-                <p><strong>{{ titulo || 'Nome da empresa'}}</strong></p>
+                <p :style="{color:title}"><strong>Restaurante do Zé</strong></p>
             </div>
-            <div class="product-text">
+            <div :style="{color}" class="product-text">
                 <p>Mesa para</p>
             </div>
-            <div class="table-choice">
+            <div :style="{color}" class="table-choice">
                 <input type="text" class="mesa" />
 
             </div>
-            <div class="date-title">
+            <div :style="{color}" class="date-title">
                 <p>Escolha a data &amp; horário</p>
             </div>
-            <div class="date-picker">
+            <div :style="{color}" class="date-picker">
                 <input type="date" placeholder="mm/dd/yyyy" style="text-align:center;">
                 <input type="time" placeholder="00:00" />
             </div>
             <div class="submit-btn">
-                <button type="submit">Confirme</button>
+                <button :style="{background: btBg, color: btCl}" type="submit">Confirme</button>
             </div>
         </div>
     </div>
 </template>
 
-<script setup>
-import dados from '../../var.json'
+<script setup lang="ts">
+// import dados from '../../var.json'
+// const titulo = dados.title
 
-const titulo = dados.title
+import Tema from '../tema.json'
+
+const props = defineProps<{
+    tema: string
+}>()
+
+const style = props.tema
+
+const title = Tema[style].$schema.Primary
+const color = Tema[style].$schema.Text
+const btBg = Tema[style].$schema.Secondary
+const btCl = Tema[style].$schema.Text
 </script>
 
 <style>
@@ -94,9 +106,8 @@ font-family: 'Raleway', sans-serif;
 }
 
 .table button {
-  color: black;
   background: transparent;
-  border: 0px solid black;
+  border: 0px solid #272729;
   border-radius:2px;
   font-size: 20px;
   width: 30px;
@@ -157,7 +168,6 @@ button:disabled {
 }
 
 .submit-btn button {
-  color: black;
   background-color: transparent;
   border: 1px solid black;
   border-radius:2px;
