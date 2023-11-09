@@ -11,5 +11,5 @@ import Cardapio from './componente/Cardapio.vue'
 import Reserva from './componente/Reserva.vue'
 import Footer from './componente/Footer.vue'
 
-const Tema = window.location.search.split('=')[1]
+const Tema = window.location.search?.split('=')[1] || '0'
 </script>

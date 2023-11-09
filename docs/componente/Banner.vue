@@ -1,19 +1,14 @@
 <template>
     <div class="banner">
         <div class="fundo">
-            <h1 :style="{color:title}">Titulo do banner</h1>
-            <p :style="{color}">Breve descrição do banner </p>
-            <button :style="{background: buttonBg, color}">Botão</button>
+            <h1 :style="{color:title}">Delícias do Sabor</h1>
+            <p :style="{color}">Explore o mundo de sabores inigualáveis no Delícias do Sabor. Nossa culinária única é uma jornada gastronômica que desperta os sentidos e alimenta a alma. Dos pratos tradicionais aos mais ousados, cada mordida é uma experiência memorável</p>
+            <button :style="{background: buttonBg, color}">Reservar Agora</button>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-// import dados from '../../var.json'
-// const titulo = dados.Banner.Title
-// const descricao = dados.Banner.Description
-// const button = dados.Banner.Button
-
 import Tema from '../tema.json'
 
 const props = defineProps<{
@@ -32,6 +27,7 @@ const buttonBg = Tema[style].$schema.Secondary
 <style>
 
 .banner {
+    background-image: url('https://picsum.photos/1000/1000');
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +37,7 @@ const buttonBg = Tema[style].$schema.Secondary
 }
 
 .banner .fundo {
-    background-image: url('https://picsum.photos/1000/1000');
+    background-color: rgba(233, 227, 227, 0.507);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
