@@ -30,9 +30,6 @@
 </template>
 
 <script setup lang="ts">
-// import dados from '../../var.json'
-// const titulo = dados.title
-
 import Tema from '../tema.json'
 
 const props = defineProps<{
@@ -112,8 +109,6 @@ font-family: 'Raleway', sans-serif;
   font-size: 20px;
   width: 30px;
   height: 30px;
-/*   box-shadow: 0 2px 1em grey; */
-  /* box-shadow: 0 2px 1em grey; */
 }
 
 .table button:active {
@@ -173,7 +168,6 @@ button:disabled {
   border-radius:2px;
   width: 200px;
   height: 50px;
-/*   box-shadow: 0 2px 1em grey; */
   font-size:20px;
   font-family: 'Raleway', sans-serif;
 }
@@ -182,10 +176,6 @@ button:disabled {
   transform: translate(0px, 2px);
   -webkit-transform: translate(0px, 2px);
   box-shadow: 0px 1px 0px 0px;
-}
-
-button, input {
-  font-family:Marmelad;
 }
 
 .mesa {

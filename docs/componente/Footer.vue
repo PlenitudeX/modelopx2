@@ -21,13 +21,6 @@
 </template>
 
 <script setup lang="ts">
-// import dados from '../../var.json'
-// const titulo = dados.title
-// const telefone = dados.Contato.telefone
-// const email = dados.Contato.email
-// const endereco = dados.Contato.endereco
-// const horario = dados.Horario
-
 import Tema from '../tema.json'
 
 const props = defineProps<{

@@ -2,8 +2,8 @@
     <div class="banner">
         <div class="fundo">
             <h1 :style="{color:title}">Delícias do Sabor</h1>
-            <p :style="{color}">Explore o mundo de sabores inigualáveis no Delícias do Sabor. Nossa culinária única é uma jornada gastronômica que desperta os sentidos e alimenta a alma. Dos pratos tradicionais aos mais ousados, cada mordida é uma experiência memorável</p>
-            <button :style="{background: buttonBg, color}">Reservar Agora</button>
+            <p :style="{color}">Desfrute de uma culinária única no Delícias do Sabor, onde cada prato, dos tradicionais aos mais ousados, oferece uma experiência gastronômica memorável que cativa os sentidos e alimenta a alma.</p>
+            <button type="submit" :style="{background: buttonBg, color}">Saiba mais</button>
         </div>
     </div>
 </template>
@@ -24,10 +24,11 @@ const buttonBg = Tema[style].$schema.Secondary
 
 </script>
 
+
 <style>
 
 .banner {
-    background-image: url('https://picsum.photos/1000/1000');
+    background-image: url('https://picsum.photos/1000/500');
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +38,7 @@ const buttonBg = Tema[style].$schema.Secondary
 }
 
 .banner .fundo {
-    background-color: rgba(233, 227, 227, 0.507);
+    background-color: rgba(255, 255, 255, 0.376);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,4 +113,5 @@ const buttonBg = Tema[style].$schema.Secondary
         font-size: 16px;
     }
 }
+
 </style>

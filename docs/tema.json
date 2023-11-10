@@ -1,9 +1,9 @@
 [
     {
         "$schema": {
-            "Primary": "#272729",
+            "Primary": "#603913",
             "Secondary": "#20db28",
-            "Body": "#f1f1f1",
+            "Body": "#20db2880",
             "Text": "#000",
             "White": "#fff",
             "Footer": "#333"
